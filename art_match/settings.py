@@ -31,12 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'picker.apps.PickerConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -119,3 +121,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#
+# Brooklyn Museum API
+# https://www.brooklynmuseum.org/opencollection/api/
+# 
+
+BK_API_KEY = 'abcd'
+BK_API_URL_TEMPLATE = "http://www.brooklynmuseum.org/opencollection/api/?method=collection.getItem&version=1&api_key={API_KEY}&item_type=object&item_id={OBJECT_ID}"
