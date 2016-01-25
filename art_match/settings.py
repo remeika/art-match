@@ -127,5 +127,5 @@ STATIC_URL = '/static/'
 # https://www.brooklynmuseum.org/opencollection/api/
 # 
 
-BK_API_KEY = 'abcd'
-BK_API_URL_TEMPLATE = "http://www.brooklynmuseum.org/opencollection/api/?method=collection.getItem&version=1&api_key={API_KEY}&item_type=object&item_id={OBJECT_ID}"
+BK_API_KEY = '8bd1ba0b6e232763c44e5dc9c34b09991453702462'
+BK_API_URL_TEMPLATE = 'https://www.brooklynmuseum.org/opencollection/api/?version=1&include_image_caption=false&include_item_fields=true&thumb_shape=original&max_thumb_size=96&max_image_size=384&format=json&include_html_style_block=false&item_type=object&item_id={OBJECT_ID}&image_start_index=0&image_results_limit=10&method=collection.getItem&api_key={API_KEY}'

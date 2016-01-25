@@ -12,7 +12,11 @@ class SearchView(FormView):
         # This method is called when valid form data has been POSTed.
         # It should return an HttpResponse.
         results = form.get_catalog()
-        if results.attrib.get('status', 'success') == 'fail':
-        	msg = results.getchildren()[0].attrib.get('message', '')
+        if results.get('status', 'success') == 'fail':
+        	msg = results.get('error', {}).get('message', '')
         	messages.error(self.request, msg)
-        return render(self.request, self.template_name, self.get_context_data())
+        return render(
+        	self.request,
+        	self.template_name,
+        	self.get_context_data(
+        		art=results.get('object', {})))
