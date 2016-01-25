@@ -22,8 +22,7 @@
   <h1>{{art.title}}</h1>
   <h3>
   {% for artist in art.artists %}
-    {{ artist.name }}
-    {% if not forloop.last %}, {% endif %}
+    {{ artist.name }}{% if not forloop.last %}, {% endif %}
   {% endfor %}
   </h3>
   <img src="{{art.images.0.uri}}">
